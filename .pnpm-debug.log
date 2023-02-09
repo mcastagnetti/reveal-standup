@@ -1,0 +1,210 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "reveal-standup",
+      "version": "0.0.1",
+      "private": true,
+      "scripts": {
+        "dev": "vite dev",
+        "build": "vite build",
+        "preview": "vite preview",
+        "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+        "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+        "lint": "prettier --plugin-search-dir . --check . && eslint .",
+        "format": "prettier --plugin-search-dir . --write ."
+      },
+      "devDependencies": {
+        "@sveltejs/adapter-auto": "^2.0.0",
+        "@sveltejs/kit": "^1.5.0",
+        "@typescript-eslint/eslint-plugin": "^5.45.0",
+        "@typescript-eslint/parser": "^5.45.0",
+        "eslint": "^8.28.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-svelte3": "^4.0.0",
+        "prettier": "^2.8.0",
+        "prettier-plugin-svelte": "^2.8.1",
+        "svelte": "^3.54.0",
+        "svelte-check": "^3.0.1",
+        "tslib": "^2.4.1",
+        "typescript": "^4.9.3",
+        "vite": "^4.0.0"
+      },
+      "type": "module"
+    },
+    "prefix": "/Users/mcastagnetti/Code/lab/reveal-standup"
+  },
+  "2 debug pnpm:context": {
+    "currentLockfileExists": false,
+    "storeDir": "/Users/mcastagnetti/.pnpm-store/v3",
+    "virtualStoreDir": "/Users/mcastagnetti/Code/lab/reveal-standup/node_modules/.pnpm"
+  },
+  "3 debug pnpm:stage": {
+    "prefix": "/Users/mcastagnetti/Code/lab/reveal-standup",
+    "stage": "resolution_started"
+  },
+  "4 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/tslib/2.5.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "tslib",
+      "rawSpec": "^2.4.1"
+    }
+  },
+  "5 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/tslib/2.5.0",
+    "requester": "/Users/mcastagnetti/Code/lab/reveal-standup",
+    "status": "resolved"
+  },
+  "6 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/prettier-plugin-svelte/2.9.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "prettier-plugin-svelte",
+      "rawSpec": "^2.8.1"
+    }
+  },
+  "7 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/prettier-plugin-svelte/2.9.0",
+    "requester": "/Users/mcastagnetti/Code/lab/reveal-standup",
+    "status": "resolved"
+  },
+  "8 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/prettier/2.8.4",
+    "wanted": {
+      "dependentId": ".",
+      "name": "prettier",
+      "rawSpec": "^2.8.0"
+    }
+  },
+  "9 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/prettier/2.8.4",
+    "requester": "/Users/mcastagnetti/Code/lab/reveal-standup",
+    "status": "resolved"
+  },
+  "10 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/prettier-plugin-svelte/2.9.0",
+    "requester": "/Users/mcastagnetti/Code/lab/reveal-standup",
+    "status": "found_in_store"
+  },
+  "11 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/tslib/2.5.0",
+    "requester": "/Users/mcastagnetti/Code/lab/reveal-standup",
+    "status": "found_in_store"
+  },
+  "12 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-config-prettier/8.6.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-config-prettier",
+      "rawSpec": "^8.5.0"
+    }
+  },
+  "13 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-config-prettier/8.6.0",
+    "requester": "/Users/mcastagnetti/Code/lab/reveal-standup",
+    "status": "resolved"
+  },
+  "14 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-config-prettier/8.6.0",
+    "requester": "/Users/mcastagnetti/Code/lab/reveal-standup",
+    "status": "found_in_store"
+  },
+  "15 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/prettier/2.8.4",
+    "size": 2830961,
+    "status": "started"
+  },
+  "16 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@sveltejs/adapter-auto/2.0.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@sveltejs/adapter-auto",
+      "rawSpec": "^2.0.0"
+    }
+  },
+  "17 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@sveltejs/adapter-auto/2.0.0",
+    "requester": "/Users/mcastagnetti/Code/lab/reveal-standup",
+    "status": "resolved"
+  },
+  "18 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@sveltejs/adapter-auto/2.0.0",
+    "requester": "/Users/mcastagnetti/Code/lab/reveal-standup",
+    "status": "found_in_store"
+  },
+  "19 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-plugin-svelte3/4.0.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-plugin-svelte3",
+      "rawSpec": "^4.0.0"
+    }
+  },
+  "20 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-svelte3/4.0.0",
+    "requester": "/Users/mcastagnetti/Code/lab/reveal-standup",
+    "status": "resolved"
+  },
+  "21 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-svelte3/4.0.0",
+    "requester": "/Users/mcastagnetti/Code/lab/reveal-standup",
+    "status": "found_in_store"
+  },
+  "22 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/svelte-check/3.0.3",
+    "wanted": {
+      "dependentId": ".",
+      "name": "svelte-check",
+      "rawSpec": "^3.0.1"
+    }
+  },
+  "23 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/svelte-check/3.0.3",
+    "requester": "/Users/mcastagnetti/Code/lab/reveal-standup",
+    "status": "resolved"
+  },
+  "24 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/svelte-check/3.0.3",
+    "requester": "/Users/mcastagnetti/Code/lab/reveal-standup",
+    "status": "found_in_store"
+  },
+  "25 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint/8.33.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint",
+      "rawSpec": "^8.28.0"
+    }
+  },
+  "26 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint/8.33.0",
+    "requester": "/Users/mcastagnetti/Code/lab/reveal-standup",
+    "status": "resolved"
+  },
+  "27 warn pnpm:install-check": {
+    "message": "Unsupported engine for registry.npmjs.org/vite/4.1.1: wanted: {\"node\":\"^14.18.0 || >=16.0.0\"} (current: {\"node\":\"v14.17.0\",\"pnpm\":\"6.32.9\"})",
+    "prefix": "/Users/mcastagnetti/Code/lab/reveal-standup"
+  },
+  "28 error pnpm": {
+    "code": "ERR_PNPM_UNSUPPORTED_ENGINE",
+    "packageId": "registry.npmjs.org/vite/4.1.1",
+    "wanted": {
+      "node": "^14.18.0 || >=16.0.0"
+    },
+    "current": {
+      "node": "v14.17.0",
+      "pnpm": "6.32.9"
+    },
+    "pkgsStack": [],
+    "err": {
+      "name": "pnpm",
+      "message": "Unsupported engine for registry.npmjs.org/vite/4.1.1: wanted: {\"node\":\"^14.18.0 || >=16.0.0\"} (current: {\"node\":\"v14.17.0\",\"pnpm\":\"6.32.9\"})",
+      "code": "ERR_PNPM_UNSUPPORTED_ENGINE",
+      "stack": "pnpm: Unsupported engine for registry.npmjs.org/vite/4.1.1: wanted: {\"node\":\"^14.18.0 || >=16.0.0\"} (current: {\"node\":\"v14.17.0\",\"pnpm\":\"6.32.9\"})\n    at checkEngine (/snapshot/dist/pnpm.cjs)\n    at checkPackage (/snapshot/dist/pnpm.cjs)\n    at packageIsInstallable (/snapshot/dist/pnpm.cjs)\n    at resolveAndFetch (/snapshot/dist/pnpm.cjs)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)\n    at async resolveDependency (/snapshot/dist/pnpm.cjs)\n    at async resolveDependenciesOfDependency (/snapshot/dist/pnpm.cjs)\n    at async Promise.all (index 13)\n    at async resolveDependencies (/snapshot/dist/pnpm.cjs)"
+    }
+  }
+}

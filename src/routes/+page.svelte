@@ -1,0 +1,75 @@
+<script lang="ts">
+	const SONGS = ['Darude - Sandstorm.mp3', 'Bob Marley - Get Up Stand Up.mp3'];
+
+	let isPlaying = false;
+	let audio: HTMLAudioElement;
+
+	function startPlaying(event: MouseEvent) {
+		event.preventDefault();
+
+		const randomSongIndex = Math.floor(Math.random() * SONGS.length);
+		audio = new Audio(`./${SONGS[randomSongIndex]}`);
+
+		audio.addEventListener('canplaythrough', () => {
+			isPlaying = true;
+
+			audio.play();
+		});
+	}
+
+	function stopPlaying(event: MouseEvent) {
+		event.preventDefault();
+		audio.pause();
+
+		isPlaying = false;
+	}
+</script>
+
+<main class="flex flex-col items-center m-auto px-10 py-2 h-screen max-w-[500px]">
+	<header>
+		<img src="./logo.png" alt="Reveal's logo" />
+	</header>
+
+	<main class="h-full w-full flex flex-col items-stretch justify-end pb-16 gap-10">
+		{#if isPlaying}
+			<img src="./cat-vibing.gif" alt="Cat vibing" class="w-full max-h-full" />
+			<button class="uppercase" on:click={stopPlaying}>WTF STOP IT</button>
+		{:else}
+			<button class="uppercase" on:click={startPlaying}>Stand up</button>
+		{/if}
+	</main>
+</main>
+
+<style lang="postcss">
+	button {
+		@apply w-full p-5 rounded-xl text-2xl text-amber-400;
+
+		--bg-size: 400%;
+
+		text-shadow: red 2px 5px;
+
+		background: linear-gradient(
+			90deg,
+			rgba(255, 0, 0, 1),
+			rgba(255, 154, 0, 1),
+			rgba(208, 222, 33, 1),
+			rgba(79, 220, 74, 1),
+			rgba(63, 218, 216, 1),
+			rgba(47, 201, 226, 1),
+			rgba(28, 127, 238, 1),
+			rgba(95, 21, 242, 1),
+			rgba(186, 12, 248, 1),
+			rgba(251, 7, 217, 1),
+			rgba(255, 0, 0, 1)
+		);
+		background-size: 200% 200%;
+
+		animation: move-bg 15s linear infinite;
+
+		@keyframes move-bg {
+			to {
+				background-position: var(--bg-size) 0;
+			}
+		}
+	}
+</style>
