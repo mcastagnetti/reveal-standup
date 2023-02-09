@@ -8,11 +8,10 @@
 		event.preventDefault();
 
 		const randomSongIndex = Math.floor(Math.random() * SONGS.length);
+		isPlaying = true;
 		audio = new Audio(`./${SONGS[randomSongIndex]}`);
 
 		audio.addEventListener('canplaythrough', () => {
-			isPlaying = true;
-
 			audio.play();
 		});
 	}
