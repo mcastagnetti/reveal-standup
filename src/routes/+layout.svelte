@@ -7,6 +7,7 @@
 <style lang="postcss">
 	:global(html) {
 		min-height: 100vh;
+		min-height: -webkit-fill-available;
 		background: linear-gradient(to bottom, #be4bdb 5%, #9775fa 95%);
 	}
 
