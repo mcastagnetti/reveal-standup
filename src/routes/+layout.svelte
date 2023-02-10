@@ -2,18 +2,22 @@
 	import '../app.css';
 </script>
 
-<slot />
+<main id="app">
+	<slot />
+</main>
 
 <style lang="postcss">
-	:global(html) {
-		min-height: 100vh;
-		min-height: -webkit-fill-available;
+	:global(:root) {
 		background: linear-gradient(to bottom, #be4bdb 5%, #9775fa 95%);
+	}
+
+	#app {
+		@apply min-h-screen flex flex-col items-center m-auto px-10 max-w-[500px] justify-between;
 	}
 
 	/* Avoid Chrome to see Safari hack */
 	@supports (-webkit-touch-callout: none) {
-		:global(html) {
+		#app {
 			/* The hack for Safari */
 			min-height: -webkit-fill-available;
 		}

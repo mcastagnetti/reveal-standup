@@ -21,19 +21,17 @@
 	}
 </script>
 
-<main class="flex flex-col items-center m-auto px-10 py-2 h-screen max-w-[500px]">
-	<header>
-		<img src="./logo.png" alt="Reveal's logo" />
-	</header>
+<header class="mt-5">
+	<img src="./logo.png" alt="Reveal's logo" />
+</header>
 
-	<main class="h-full w-full flex flex-col items-stretch justify-end pb-16 gap-10">
-		{#if isPlaying}
-			<img src="./cat-vibing.gif" alt="Cat vibing" class="w-full max-h-full" />
-			<button class="uppercase" on:click={stopPlaying}>WTF STOP IT</button>
-		{:else}
-			<button class="uppercase" on:click={startPlaying}>Stand up</button>
-		{/if}
-	</main>
+<main class="h-full w-full flex flex-col items-stretch justify-end pb-5 gap-10">
+	{#if isPlaying}
+		<img src="./cat-vibing.gif" alt="Cat vibing" class="w-full max-h-full" />
+		<button class="uppercase" on:click={stopPlaying}>WTF STOP IT</button>
+	{:else}
+		<button class="uppercase" on:click={startPlaying}>Stand up</button>
+	{/if}
 </main>
 
 <style lang="postcss">
