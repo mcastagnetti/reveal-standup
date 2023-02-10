@@ -1,6 +1,12 @@
 <script lang="ts">
 	const SONGS = ['Darude - Sandstorm.mp3', 'Bob Marley - Get Up Stand Up.mp3'];
 
+	async function getJoke() {
+		const data = await (await fetch('https://api.chucknorris.io/jokes/random')).json();
+
+		return data.value;
+	}
+
 	let isPlaying = false;
 	let audio: HTMLAudioElement;
 
@@ -25,16 +31,28 @@
 	<img src="./logo.png" alt="Reveal's logo" />
 </header>
 
-<main class="h-full w-full flex flex-col items-stretch justify-end pb-5 gap-10">
+<main class="h-full w-full flex flex-col items-stretch justify-between py-5 gap-10 flex-1">
 	{#if isPlaying}
 		<img src="./cat-vibing.gif" alt="Cat vibing" class="w-full max-h-full" />
 		<button class="uppercase" on:click={stopPlaying}>WTF STOP IT</button>
 	{:else}
+		<article class="flex-1 flex items-center">
+			{#await getJoke()}
+				<p>Fetching juicy stuff...</p>
+			{:then joke}
+				<p>{joke}</p>
+			{/await}
+		</article>
 		<button class="uppercase" on:click={startPlaying}>Stand up</button>
 	{/if}
 </main>
 
 <style lang="postcss">
+	p {
+		@apply font-mono text-yellow-300;
+		text-shadow: red 2px 3px;
+	}
+
 	button {
 		@apply w-full p-5 rounded-xl text-2xl text-amber-400;
 
