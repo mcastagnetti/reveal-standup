@@ -1,0 +1,14 @@
+{
+    "name": "Reveal's Standup",
+    "short_name": "Reveal's Standup",
+    "icons": [
+        {
+            "src": "/android-chrome-72x72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#be4bdb",
+    "background_color": "#be4bdb",
+    "display": "standalone"
+}
