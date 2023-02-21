@@ -4,7 +4,7 @@
 	async function getJoke() {
 		const data = await (await fetch('https://api.chucknorris.io/jokes/random')).json();
 
-		return data.value;
+		return data.value.replace('Chuck Norris', 'Tanguy Moreau');
 	}
 
 	let isPlaying = false;
