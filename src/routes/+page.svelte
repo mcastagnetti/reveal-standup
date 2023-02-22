@@ -1,10 +1,18 @@
 <script lang="ts">
+	const MEMBERS = [
+		'Tanguy Moreau',
+		'Frédéric Laudarin',
+		'Donia Nefiz',
+		'Emeric Lemoine',
+		'Marc-Olivier Castagnetti',
+		'Damien Peelman',
+	];
 	const SONGS = ['Darude - Sandstorm.mp3', 'Bob Marley - Get Up Stand Up.mp3'];
 
 	async function getJoke() {
 		const data = await (await fetch('https://api.chucknorris.io/jokes/random')).json();
 
-		return data.value.replace('Chuck Norris', 'Tanguy Moreau');
+		return data.value.replaceAll('Chuck Norris', MEMBERS[Math.floor(Math.random() * MEMBERS.length)]);
 	}
 
 	let isPlaying = false;
