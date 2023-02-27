@@ -7,7 +7,27 @@
 		'Marc-Olivier Castagnetti',
 		'Damien Peelman',
 	];
-	const SONGS = ['Darude - Sandstorm.mp3', 'Bob Marley - Get Up Stand Up.mp3'];
+
+	const THEMES = {
+		sandstorm: {
+			song: 'Darude - Sandstorm.mp3',
+			gif: 'cat-vibing.gif',
+			alt: 'Cat Vibin',
+			weight: 1,
+		},
+		bob: {
+			song: 'Bob Marley - Get Up Stand Up.mp3',
+			gif: 'cat-vibing.gif',
+			alt: 'Cat Vibin',
+			weight: 1,
+		},
+		cena: {
+			song: 'John Cena - His Name is John Cena.mp3',
+			gif: 'john-cena.gif',
+			alt: 'John Cena',
+			weight: 0.5,
+		},
+	} as const;
 
 	async function getJoke() {
 		const data = await (await fetch('https://api.chucknorris.io/jokes/random')).json();
@@ -17,13 +37,25 @@
 
 	let isPlaying = false;
 	let audio: HTMLAudioElement;
+	let theme: (typeof THEMES)[keyof typeof THEMES];
+
+	function getRandomTheme() {
+		let weighthedArray: string[] = [];
+
+		Object.keys(THEMES).forEach((theme) => {
+			weighthedArray = [...weighthedArray, Array(THEMES[theme].weight * 10).fill(theme)].flat();
+		});
+		console.log(weighthedArray);
+
+		return THEMES[weighthedArray[Math.floor(Math.random() * weighthedArray.length)] as keyof typeof THEMES];
+	}
 
 	function startPlaying(event: MouseEvent) {
 		event.preventDefault();
+		theme = getRandomTheme();
 
-		const randomSongIndex = Math.floor(Math.random() * SONGS.length);
 		isPlaying = true;
-		audio = new Audio(`./${SONGS[randomSongIndex]}`);
+		audio = new Audio(`./musics/${theme.song}`);
 		audio.play();
 	}
 
@@ -41,7 +73,9 @@
 
 <main class="h-full w-full flex flex-col items-stretch justify-between py-5 gap-10 flex-1">
 	{#if isPlaying}
-		<img src="./cat-vibing.gif" alt="Cat vibing" class="w-full max-h-full" />
+		<div class="flex items-center flex-1">
+			<img src="./gifs/{theme.gif}" alt={theme.alt} class="w-full max-h-full" />
+		</div>
 		<button class="uppercase" on:click={stopPlaying}>WTF STOP IT</button>
 	{:else}
 		<article class="flex-1 flex items-center">
