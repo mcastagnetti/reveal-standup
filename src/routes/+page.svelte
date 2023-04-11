@@ -8,6 +8,8 @@
 		'Damien Peelman',
 	];
 
+	const APIS = ['https://api.chucknorris.io/jokes/random'];
+
 	const THEMES = {
 		sandstorm: {
 			song: 'Darude - Sandstorm.mp3',
@@ -29,10 +31,15 @@
 		},
 	} as const;
 
-	async function getJoke() {
-		const data = await (await fetch('https://api.chucknorris.io/jokes/random')).json();
+	function random<T>(items: T[]): T {
+		const randomIndex = Math.floor(Math.random() * items.length);
+		return items[randomIndex];
+	}
 
-		return data.value.replaceAll('Chuck Norris', MEMBERS[Math.floor(Math.random() * MEMBERS.length)]);
+	async function getJoke() {
+		const data = await (await fetch(random(APIS))).json();
+
+		return data.value.replaceAll('Chuck Norris', random(MEMBERS));
 	}
 
 	let isPlaying = false;
@@ -42,10 +49,12 @@
 	function getRandomTheme() {
 		let weighthedArray: string[] = [];
 
-		Object.keys(THEMES).forEach((theme) => {
-			weighthedArray = [...weighthedArray, Array(THEMES[theme].weight * 10).fill(theme)].flat();
+		Object.keys(THEMES).forEach((themeName) => {
+			weighthedArray = [
+				...weighthedArray,
+				Array(THEMES[themeName as keyof typeof THEMES].weight * 10).fill(theme),
+			].flat();
 		});
-		console.log(weighthedArray);
 
 		return THEMES[weighthedArray[Math.floor(Math.random() * weighthedArray.length)] as keyof typeof THEMES];
 	}
