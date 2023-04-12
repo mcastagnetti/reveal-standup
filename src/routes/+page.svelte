@@ -52,7 +52,7 @@
 		Object.keys(THEMES).forEach((themeName) => {
 			weighthedArray = [
 				...weighthedArray,
-				Array(THEMES[themeName as keyof typeof THEMES].weight * 10).fill(theme),
+				Array(THEMES[themeName as keyof typeof THEMES].weight * 10).fill(themeName),
 			].flat();
 		});
 
